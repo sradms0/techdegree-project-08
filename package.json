@@ -1,0 +1,25 @@
+{
+  "name": "techdegree-project-08",
+  "version": "1.0.0",
+  "description": "a package for building a front end website using gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sradms0/techdegree-project-08.git"
+  },
+  "author": "Scott Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sradms0/techdegree-project-08/issues"
+  },
+  "homepage": "https://github.com/sradms0/techdegree-project-08#readme",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify":  "latest"
+  }
+}
