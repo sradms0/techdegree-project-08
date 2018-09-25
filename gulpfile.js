@@ -9,10 +9,16 @@ const gulp = require('gulp'),
     del = require('del');
 
 gulp.task('concatScripts', () => {
-    return gulp.src(['js/**'])
-    .pipe(maps.init())
-    .pipe(concat('app.js'))
-    .pipe(maps.write('./'))
-    .pipe(gulp.dest('js'));
+    return gulp.src(['js/circle/**'])
+        .pipe(maps.init())
+        .pipe(concat('global.js'))
+        .pipe(maps.write('./'))
+        .pipe(gulp.dest('js'));
 });
 
+gulp.task('minifyScripts', ['concatScripts'], () => {
+    return gulp.src(['js/global.js'])
+        .pipe(uglify())
+        .pipe(rename('global.min.js'))
+        .pipe(gulp.dest('js'));
+});
