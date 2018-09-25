@@ -31,9 +31,10 @@ gulp.task('scripts', ['minifyScripts'], () => {
 gulp.task('styles', () => {
     return gulp.src('sass/global.scss')
         .pipe(maps.init())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(concat('all.min.css'))
         .pipe(maps.write('./'))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('dist/styles'));
 })
 
 gulp.task('clean', () => {
