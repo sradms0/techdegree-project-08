@@ -11,13 +11,13 @@ const gulp = require('gulp'),
 gulp.task('concatScripts', () => {
     return gulp.src(['js/jquery.js', 'js/circle/**'])
         .pipe(maps.init())
-        .pipe(concat('global.js'))
+        .pipe(concat('all.js'))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('js'));
 });
 
 gulp.task('minifyScripts', ['concatScripts'], () => {
-    return gulp.src(['js/global.js'])
+    return gulp.src(['js/all.js'])
         .pipe(uglify())
         .pipe(rename('all.min.js'))
         .pipe(gulp.dest('js'));
