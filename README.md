@@ -8,7 +8,7 @@ Eigth Techdegree Project - Use Gulp to Build A Front End Website
 - [x] As a developer, when I run the gulp scripts or gulp styles commands at the command line, source maps are generated for the JavaScript and CSS files respectively.
 - [x] As a developer, I should be able to run the gulp images command at the command line to optimize the size of the project’s JPEG and PNG files, and then copy those optimized images to the dist/content folder.
 - [x] As a developer, I should be able to run the gulp clean command at the command line to delete all of the files and folders in the dist folder.
-- [ ] As a developer, I should be able to run the gulp build command at the command line to run the clean, scripts, styles, and images tasks with confidence that the clean task completes before the other commands.
+- [x] As a developer, I should be able to run the gulp build command at the command line to run the clean, scripts, styles, and images tasks with confidence that the clean task completes before the other commands.
 - [ ] As a developer, I should be able to run the gulp command at the command line to run the build task and serve my project using a local web server.
 
 * attempt at exceeding expectations
