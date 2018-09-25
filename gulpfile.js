@@ -24,8 +24,8 @@ gulp.task('minifyScripts', ['concatScripts'], () => {
 });
 
 gulp.task('scripts', ['minifyScripts'], () => {
-    return gulp.src(['js/all.min.js', 'index.html'], {base: './'})
-        .pipe(gulp.dest('dist'));
+    return gulp.src(['js/all.min.js'], {base: './js'})
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('styles', () => {
