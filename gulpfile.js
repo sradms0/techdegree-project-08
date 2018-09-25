@@ -8,3 +8,11 @@ const gulp = require('gulp'),
     maps = require('gulp-sourcemaps'),
     del = require('del');
 
+gulp.task('concatScripts', () => {
+    return gulp.src(['js/**'])
+    .pipe(maps.init())
+    .pipe(concat('app.js'))
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('js'));
+});
+
