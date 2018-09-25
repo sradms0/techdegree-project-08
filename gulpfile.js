@@ -27,3 +27,7 @@ gulp.task('scripts', ['minifyScripts'], () => {
     return gulp.src(['js/all.min.js', 'index.html'], {base: './'})
         .pipe(gulp.dest('dist'));
 });
+
+gulp.task('clean', () => {
+    del(['dist', 'js/all*']);
+})
