@@ -19,6 +19,6 @@ gulp.task('concatScripts', () => {
 gulp.task('minifyScripts', ['concatScripts'], () => {
     return gulp.src(['js/global.js'])
         .pipe(uglify())
-        .pipe(rename('global.min.js'))
+        .pipe(rename('all.min.js'))
         .pipe(gulp.dest('js'));
 });
