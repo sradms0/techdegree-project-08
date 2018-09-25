@@ -28,6 +28,14 @@ gulp.task('scripts', ['minifyScripts'], () => {
         .pipe(gulp.dest('dist'));
 });
 
+gulp.task('styles', () => {
+    return gulp.src('sass/global.scss')
+        .pipe(maps.init())
+        .pipe(sass())
+        .pipe(maps.write('./'))
+        .pipe(gulp.dest('css'));
+})
+
 gulp.task('clean', () => {
     del(['dist', 'js/all*']);
 })
