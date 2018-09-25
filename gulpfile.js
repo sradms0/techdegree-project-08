@@ -9,7 +9,7 @@ const gulp = require('gulp'),
     del = require('del');
 
 gulp.task('concatScripts', () => {
-    return gulp.src(['js/circle/**'])
+    return gulp.src(['js/jquery.js', 'js/circle/**'])
         .pipe(maps.init())
         .pipe(concat('global.js'))
         .pipe(maps.write('./'))
