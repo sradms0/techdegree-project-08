@@ -22,3 +22,8 @@ gulp.task('minifyScripts', ['concatScripts'], () => {
         .pipe(rename('all.min.js'))
         .pipe(gulp.dest('js'));
 });
+
+gulp.task('scripts', ['minifyScripts'], () => {
+    return gulp.src(['js/all.min.js', 'index.html'], {base: './'})
+        .pipe(gulp.dest('dist'));
+});
