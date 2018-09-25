@@ -23,6 +23,7 @@
     "gulp-sass": "latest",
     "gulp-sourcemaps":  "latest",
     "gulp-uglify":  "latest",
+    "gulp-imagemin":  "latest",
     "del":  "latest"
   }
 }
