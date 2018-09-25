@@ -6,6 +6,7 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     maps = require('gulp-sourcemaps'),
+    imagemin = require('gulp-imagemin')
     del = require('del');
 
 gulp.task('scripts', () => {
@@ -25,7 +26,7 @@ gulp.task('styles', () => {
         .pipe(concat('all.min.css'))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('dist/styles'));
-})
+});
 
 gulp.task('clean', () => {
     del(['dist']);
