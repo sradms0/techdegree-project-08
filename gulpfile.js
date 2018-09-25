@@ -34,6 +34,11 @@ gulp.task('images', () => {
         .pipe(gulp.dest('dist/content'));
 });
 
+gulp.task('build', ['clean', 'scripts', 'styles', 'images'], () => {
+    return gulp.src('index.html', {base: './'})
+        .pipe(gulp.dest('dist'));
+})
+
 gulp.task('clean', () => {
     del(['dist']);
 })
