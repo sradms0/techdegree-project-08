@@ -43,3 +43,10 @@ gulp.task('build', ['clean', 'scripts', 'styles', 'images'], () => {
 gulp.task('clean', () => {
     del(['dist']);
 })
+
+gulp.task('connect', ['build'], () => {
+    return connect.server({
+        root: 'dist',
+        livereload: true
+    });
+});
