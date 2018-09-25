@@ -7,6 +7,7 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     maps = require('gulp-sourcemaps'),
     imagemin = require('gulp-imagemin'),
+    connect = require('gulp-connect'),
     del = require('del');
 
 gulp.task('scripts', () => {
