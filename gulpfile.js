@@ -35,6 +35,10 @@ gulp.task('images', () => {
         .pipe(gulp.dest('dist/content'));
 });
 
+gulp.task('watchSass', () => {
+    gulp.watch('scc/**/*.scss', ['styles']);
+});
+
 gulp.task('build', ['clean', 'scripts', 'styles', 'images'], () => {
     return gulp.src('index.html', {base: './'})
         .pipe(gulp.dest('dist'));
@@ -51,3 +55,4 @@ gulp.task('connect', ['build'], () => {
         livereload: true
     });
 });
+
