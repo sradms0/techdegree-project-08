@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/sradms0/techdegree-project-08#readme",
   "devDependencies": {
-    "gulp": "latest",
+    "del": "latest",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-imagemin": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
-    "gulp-sourcemaps":  "latest",
-    "gulp-uglify":  "latest",
-    "gulp-imagemin":  "latest",
-    "gulp-connect":  "latest",
-    "del":  "latest"
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest"
   }
 }
