@@ -18,7 +18,6 @@ const sassSources = ['sass/**/*.scss'],
 gulp.task('html', () => {
     return gulp.src(htmlSources)
         .pipe(gulp.dest('dist'))
-        .pipe(connect.reload());
 });
 
 gulp.task('scripts', () => {
@@ -48,23 +47,22 @@ gulp.task('images', () => {
         .pipe(gulp.dest('dist/content'));
 });
 
-gulp.task('watch', () => {
-    gulp.watch(jsSources, ['scripts']);
-    gulp.watch(sassSources, ['styles']);
+gulp.task('watch', (done) => {
+    gulp.watch(jsSources, gulp.series('scripts'));
+    gulp.watch(sassSources, gulp.series('styles'));
+    done();
 });
 
-gulp.task('build', ['clean', 'html', 'scripts', 'styles', 'images']);
+gulp.task('clean', () => {return del(['dist'])});
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'scripts', 'styles', 'images')));
 
-gulp.task('clean', () => {
-    return del(['dist']);
-})
-
-gulp.task('connect', ['build'], () => {
-    return connect.server({
+gulp.task('connect', (done) => {
+    connect.server({
         root: 'dist',
         port: 3000,
         livereload: true
     });
+    done();
 });
 
-gulp.task('default', ['connect']);
+gulp.task('default', gulp.series('build', 'connect', 'watch'));
