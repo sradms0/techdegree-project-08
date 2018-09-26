@@ -36,7 +36,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('watchSass', () => {
-    gulp.watch('scc/**/*.scss', ['styles']);
+    gulp.watch('sass/**/*.scss', ['styles']);
 });
 
 gulp.task('build', ['clean', 'scripts', 'styles', 'images'], () => {
@@ -56,3 +56,4 @@ gulp.task('connect', ['build'], () => {
     });
 });
 
+gulp.task('default', ['watchSass', 'connect'], () => {});
